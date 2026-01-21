@@ -14,12 +14,22 @@ if (!token) {
 // Создаем экземпляр бота
 const bot = new TelegramBot(token, { polling: true });
 
+// Варианты ответов
+const responses = [
+  'Привет',
+  'Добрый день!',
+  'Приятная встреча!'
+];
+
 // Обработчик всех текстовых сообщений
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   
+  // Выбираем случайный ответ
+  const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+  
   // Отвечаем на любое сообщение
-  bot.sendMessage(chatId, 'Привет, я бот!');
+  bot.sendMessage(chatId, randomResponse);
 });
 
 console.log('Бот запущен и готов к работе!');
