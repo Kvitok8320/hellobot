@@ -1,10 +1,6 @@
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 
-// Отладочный вывод
-console.log('Проверка переменных окружения:');
-console.log('BOT_TOKEN:', process.env.BOT_TOKEN ? 'найден (длина: ' + process.env.BOT_TOKEN.length + ')' : 'НЕ НАЙДЕН');
-
 // Получаем токен из переменной окружения
 const token = process.env.BOT_TOKEN;
 
